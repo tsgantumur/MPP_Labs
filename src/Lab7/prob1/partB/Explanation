@@ -1,0 +1,2 @@
+Because parameter of overrided equals method in Employee class is not Object.
+contains() method checks the equal() method on Object while checking.
