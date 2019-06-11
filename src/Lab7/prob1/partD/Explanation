@@ -1,1 +1,1 @@
-dd
+Because there is a mutable variable. Key(boolean visited) of hashmap is changed.
