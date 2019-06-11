@@ -11,7 +11,7 @@ public class ProductInfo
 {
 	static enum SortMethod {BYPRICE, BYTITLE};
 	
-	public void sort(List<Product> prod, final SortMethod method)
+	public static void sort(List<Product> prod, final SortMethod method)
 	{
 		class ProductComparator implements Comparator<Product>
 		{
@@ -21,11 +21,11 @@ public class ProductInfo
 				// TODO Auto-generated method stub
 				if(method == SortMethod.BYTITLE)
 				{
-					return p1.title.compareTo(p2.title);
+					return p1.getTitle().compareTo(p2.getTitle());
 				}
 				else
 				{
-					return Double.compare(p1.price, p2.price);
+					return Double.compare(p1.getPrice(), p2.getPrice());
 				}
 			}
 			
@@ -43,7 +43,11 @@ public class ProductInfo
 		products.add(new Product("C", 500.0, 3));
 		products.add(new Product("D", 3000.0, 4));
 		
+		sort(products, SortMethod.BYPRICE);
+		System.out.println(products);
 		
+		sort(products, SortMethod.BYTITLE);
+		System.out.println(products);
 		
 	}
 }
