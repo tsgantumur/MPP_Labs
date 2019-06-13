@@ -12,6 +12,7 @@ public class Main {
 
 		for(String s : names)
 			System.out.println(s);
+		
 	}
 
 }
