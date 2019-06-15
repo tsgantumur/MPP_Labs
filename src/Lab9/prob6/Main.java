@@ -1,12 +1,10 @@
 package Lab9.prob6;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -19,14 +17,14 @@ public class Main {
 				);
 		
 		System.out.println(setList);
+		System.out.print(union(setList));
 		
 	}
 	
-	public Set<String> union(List<Set<String>> sets)
+	public static Set<String> union(List<Set<String>> sets)
 	{
-		return null;
-		//return sets.stream().map(l -> l.)
-		//.collect(Collectors.joining(", "));
+		
+		return sets.stream().flatMap(Set::stream).collect(Collectors.toSet());
 	}
 
 }

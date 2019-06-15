@@ -1,6 +1,7 @@
 package Lab9.prob7a;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -16,7 +17,8 @@ public class Main {
 		                  new Employee("Donald", "Trump", 100000));
 		
 		//your stream pipeline here
-
+		
+		
 	}
 
 }
