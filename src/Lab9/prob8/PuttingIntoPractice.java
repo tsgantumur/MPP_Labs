@@ -45,10 +45,11 @@ public class PuttingIntoPractice{
    
         System.out.println("Query 6");
         // Query 6: Update all transactions so that the traders from Milan are set to Cambridge.
-        
+        LambdaLibrary.UPDATE_TRANSACTIONS.apply(transactions).forEach(System.out::println);
         
         System.out.println("Query 7");
         // Query 7: What's the highest value in all the transactions?
         System.out.println(LambdaLibrary.HIGHEST_VALUE.apply(transactions));
+        
     }
 }

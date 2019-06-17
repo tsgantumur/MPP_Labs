@@ -52,7 +52,10 @@ public class LambdaLibrary
     				.collect(Collectors.toList());
 
 	// Query 6: Update all transactions so that the traders from Milan are set to Cambridge.
-    
+    public static final Function<List<Transaction>, List<Transaction>> UPDATE_TRANSACTIONS =
+    		(list) -> list.stream()
+    				.peek(t -> t.getTrader().setCity("Cambridge"))
+    				.collect(Collectors.toList());
     
     // Query 7: What's the highest value in all the transactions?
     public static final Function<List<Transaction>, String>  HIGHEST_VALUE =

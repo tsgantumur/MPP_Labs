@@ -3,6 +3,7 @@ package Lab9.prob10;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -55,16 +56,28 @@ public static void main(String args[]){
 	Human[] list = { new Human("Joe",35,"Male"), new Human("Jane",45,"Female"), new Human("John",30,"Male")};
 	
     // Query 1  : Print only Female canditates names
-	
+	Stream.of(list).filter(h -> h.getGender().equalsIgnoreCase("female"))
+		.map(Human::getName)
+		.forEach(System.out::println);
 
-    // Query 2 : Cretae an objecy by choosing suitable Interface to the specified constructors(Totally 3 constuctors)using fouth type of Method Reference ClassName::new. Then print the object status 
- 
+    // Query 2 : Create an object by choosing suitable Interface to the specified constructors(Totally 3 constuctors)using fouth type of Method Reference ClassName::new. Then print the object status 
+	Human newHuman = new Human("Gana", 29, "Male");
+	TriFunction<String, Integer, String, Human> myFunc = Human::new;
+	System.out.println(myFunc.apply(newHuman.name, newHuman.age, newHuman.gender).toString());
+	
 	// Query 3 : Count the male candidates whose age is more than 30
-    
+    System.out.println(Stream.of(list).filter(h -> h.getGender().equalsIgnoreCase("male"))
+    		.filter(h -> h.age > 30)
+    		.count());
     
     
    }
 
 
 
+}
+
+interface TriFunction<T, U, E, R>
+{
+	R apply(T t, U u, E e);
 }

@@ -70,4 +70,26 @@ public class Dish {
     	return dishes.stream()
     			.anyMatch(d -> d.calories > 1000);
     }
+    
+    //d
+    public static Optional<Dish> FirstItemofMeat(List<Dish> dishes)
+    {
+    	return dishes.stream()
+    			.filter(d -> d.type == Type.MEAT)
+    			.findFirst();
+    }
+    
+    //e
+    public static int calculateTotalCalories(List<Dish> dishes)
+    {
+    	return dishes.stream().map(m -> m.getCalories())
+    			.reduce(0, (a,b) -> a + b);
+    }
+    
+    //f
+    public static int calculateTotalCaloriesMethodReference(List<Dish> dishes)
+    {
+    	return dishes.stream().mapToInt(Dish::getCalories)
+    			.sum();
+    }
 }
