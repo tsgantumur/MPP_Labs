@@ -2,6 +2,7 @@ package Lab9.prob7a;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -17,8 +18,17 @@ public class Main {
 		                  new Employee("Donald", "Trump", 100000));
 		
 		//your stream pipeline here
+		List<String> letters = IntStream.rangeClosed('N', 'Z').mapToObj(var -> "" + (char) var).collect(Collectors.toList());
 		
-		
+		for(String s : letters)
+		{
+		list.stream().filter(a -> a.salary > 100000)
+		.filter(a -> a.lastName.startsWith(s))
+		.map(a-> a.firstName + " " + a.lastName)
+		.sorted()
+		.collect(Collectors.toList()).forEach(System.out::println);
+		}
 	}
 
 }
+

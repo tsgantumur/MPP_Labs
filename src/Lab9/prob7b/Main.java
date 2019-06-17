@@ -1,6 +1,8 @@
 package Lab9.prob7b;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class Main {
@@ -16,7 +18,13 @@ public class Main {
 		                  new Employee("Alice", "Richards", 101000),
 		                  new Employee("Donald", "Trump", 100000));
 		
+		List<String> letters = IntStream.rangeClosed('N', 'Z').mapToObj(var -> "" + (char) var).collect(Collectors.toList());
 		
+		for(String s : letters)
+		{
+			LambdaLibrary.SEARCH_BY_LASTNAME_AND_SALARY.apply(list, s, 100000)
+			.forEach(System.out::println);;
+		}
 	}
 
 }

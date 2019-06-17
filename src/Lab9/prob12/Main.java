@@ -12,7 +12,8 @@ public class Main {
 		
 		//prob1
 		System.out.println("Lab9 prob1");
-		Stream.of("Bill", "Thomas", "Mary").forEach(str-> System.out.print(str + ", "));
+		Stream<String> names = Stream.of("Bill", "Thomas", "Mary");
+		System.out.println(names.collect(Collectors.toList()));
 		System.out.println();
 		
 		//prob2

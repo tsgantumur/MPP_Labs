@@ -48,4 +48,26 @@ public class Dish {
                            new Dish("pizza", true, 550, Dish.Type.OTHER),
                            new Dish("prawns", false, 400, Dish.Type.FISH),
                            new Dish("salmon", false, 450, Dish.Type.FISH));
+    
+    //a
+    public static boolean hasVegetarian(List<Dish> dishes)
+    {
+    	return dishes.stream()
+    			.anyMatch(e-> e.vegetarian);
+    	
+    }
+    
+    //b
+    public static boolean lessThan1000(List<Dish> dishes)
+    {
+    	return dishes.stream()
+    			.anyMatch(d -> d.calories < 1000);
+    }
+    
+    //c
+    public static boolean greaterThan1000(List<Dish> dishes)
+    {
+    	return dishes.stream()
+    			.anyMatch(d -> d.calories > 1000);
+    }
 }
