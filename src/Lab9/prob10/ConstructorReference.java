@@ -1,11 +1,5 @@
 package Lab9.prob10;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 class Human
@@ -56,9 +50,12 @@ public static void main(String args[]){
 	Human[] list = { new Human("Joe",35,"Male"), new Human("Jane",45,"Female"), new Human("John",30,"Male")};
 	
     // Query 1  : Print only Female canditates names
-	Stream.of(list).filter(h -> h.getGender().equalsIgnoreCase("female"))
-		.map(Human::getName)
-		.forEach(System.out::println);
+//	Stream.of(list).filter(h -> h.getGender().equalsIgnoreCase("female"))
+//		.map(Human::getName)
+//		.forEach(System.out::println);
+	Stream.of(list).filter( h -> h.gender.equalsIgnoreCase("female"))
+					.map(Human::getName)
+					.forEach(System.out::println);
 
     // Query 2 : Create an object by choosing suitable Interface to the specified constructors(Totally 3 constuctors)using fouth type of Method Reference ClassName::new. Then print the object status 
 	Human newHuman = new Human("Gana", 29, "Male");

@@ -28,6 +28,8 @@ public class Main {
 		.sorted()
 		.collect(Collectors.toList()).forEach(System.out::println);
 		}
+		
+		
 	}
 
 }

@@ -14,6 +14,7 @@ public class Main {
 		}
 		return false;	
 	}
+
 	
 	public static <T> boolean contains2(List<? extends T> list, T e, 
 			BiPredicate<? super T,? super T> pred2) {
@@ -38,7 +39,8 @@ public class Main {
 		list.add(new Employee(1001, "Joe", 50000));
 		Employee e = new Employee(1001, "Joe", 50000);
 		boolean foundIt = Main.contains2(list, e, (e1,e2) -> e1.getId()==e2.getId());
-		System.out.println(foundIt);		
+		System.out.println(foundIt);	
+		
 	}
 	
 	public static void test3() {

@@ -1,9 +1,16 @@
 package Lab9.prob9;
 
+import java.util.stream.LongStream;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		long n = LongStream.rangeClosed(1,  5)
+				.reduce(1, (x, y) -> x * y);
+		
+		System.out.println(n);
 
 		//a
 		System.out.println("a. Vegetarian: " + Dish.hasVegetarian(Dish.menu));
